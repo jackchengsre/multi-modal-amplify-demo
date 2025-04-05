@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Modal Root Cause Analysis Demo - Jack Cheng's SRE Copilot</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../demo.css">
+    <link rel="stylesheet" href="multi-modal.css">
+    <link rel="stylesheet" href="css/multi-modal-fix.css">
+    <link rel="icon" href="../../images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../../images/logo.svg" alt="Jack Cheng's SRE Copilot Logo">
+                <h1>Jack Cheng's SRE Copilot</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html#features">Features</a></li>
+                    <li><a href="../../index.html#architecture">Architecture</a></li>
+                    <li><a href="../../index.html#monitoring">Monitoring</a></li>
+                    <li><a href="../../index.html#root-cause">Root Cause Analysis</a></li>
+                    <li><a href="../../index.html#docs">Documentation</a></li>
+                    <li><a href="../../index.html#demo">Demo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="demo-hero">
+        <div class="container">
+            <h2>Multi-Modal Root Cause Analysis Demo</h2>
+            <p>Experience how Jack Cheng's SRE Copilot correlates logs, metrics, and dashboard images to identify the root cause of JMS connection failures and JVM out-of-memory errors.</p>
+        </div>
+    </section>
+
+    <section class="demo-selector">
+        <div class="container">
+            <div class="demo-nav">
+                <a href="../index.html" class="demo-nav-link">AWS Service Demo</a>
+                <a href="index.html" class="demo-nav-link active">Multi-Modal Demo</a>
+            </div>
+            <div class="scenario-selector">
+                <button class="scenario-btn active" data-scenario="jms">JMS Connection Failures</button>
+                <button class="scenario-btn" data-scenario="jvm">JVM Out-of-Memory Errors</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-content">
+        <div class="container">
+            <div class="multi-modal-analysis">
+                <div class="data-sources-panel">
+                    <h3>Data Sources</h3>
+                    <div class="data-source-tabs">
+                        <button class="tab-btn active" data-tab="logs">Application Logs</button>
+                        <button class="tab-btn" data-tab="metrics">System Metrics</button>
+                        <button class="tab-btn" data-tab="dashboard">Dashboard Images</button>
+                    </div>
+                    <div class="data-source-content">
+                        <div class="tab-content active" id="logs-content">
+                            <h4>Application Logs</h4>
+                            <div class="log-viewer" id="app-logs">
+                                <pre>Loading application logs...</pre>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="metrics-content">
+                            <h4>System Metrics</h4>
+                            <div class="metrics-viewer" id="system-metrics">
+                                <div class="metrics-chart">Loading metrics chart...</div>
+                                <div class="metrics-data" id="metrics-data">Loading metrics data...</div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="dashboard-content">
+                            <h4>Dashboard Images</h4>
+                            <div class="dashboard-viewer" id="dashboard-images">
+                                <div class="dashboard-carousel">
+                                    <div class="dashboard-image active" id="dashboard-1">
+                                        <img src="images/jms-network-dashboard.png" alt="JMS Network Dashboard" id="dashboard-img-1">
+                                        <div class="image-caption">Network connectivity dashboard showing packet loss and latency</div>
+                                    </div>
+                                    <div class="dashboard-image" id="dashboard-2">
+                                        <img src="images/jms-broker-dashboard.png" alt="JMS Broker Dashboard" id="dashboard-img-2">
+                                        <div class="image-caption">JMS broker performance with connection counts and throughput</div>
+                                    </div>
+                                    <div class="dashboard-image" id="dashboard-3">
+                                        <img src="images/jms-application-dashboard.png" alt="JMS Application Dashboard" id="dashboard-img-3">
+                                        <div class="image-caption">Application performance with error rates and status</div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" id="prev-btn">Previous</button>
+                                    <div class="carousel-indicators">
+                                        <span class="indicator active" data-index="0"></span>
+                                        <span class="indicator" data-index="1"></span>
+                                        <span class="indicator" data-index="2"></span>
+                                    </div>
+                                    <button class="carousel-btn" id="next-btn">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-panel">
+                    <h3>Multi-Modal Analysis</h3>
+                    <div class="analysis-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-status">Initializing multi-modal analysis...</div>
+                    </div>
+                    <div class="correlation-view">
+                        <h4>Cross-Modal Correlation</h4>
+                        <div class="correlation-diagram" id="correlation-diagram">
+                            <div class="correlation-placeholder">Start analysis to see correlations</div>
+                        </div>
+                    </div>
+                    <div class="analysis-results">
+                        <div class="result-section">
+                            <h4>Detected Issues</h4>
+                            <ul id="detected-issues">
+                                <li>Waiting for analysis to complete...</li>
+                            </ul>
+                        </div>
+                        <div class="result-section">
+                            <h4>Root Cause</h4>
+                            <div id="root-cause">
+                                <p>Waiting for analysis to complete...</p>
+                            </div>
+                        </div>
+                        <div class="result-section">
+                            <h4>Recommendations</h4>
+                            <ul id="recommendations">
+                                <li>Waiting for analysis to complete...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-actions">
+                <button id="start-analysis" class="btn primary">Start Multi-Modal Analysis</button>
+                <button id="reset-demo" class="btn secondary">Reset Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="multi-modal-explanation">
+        <div class="container">
+            <h3>How Multi-Modal Analysis Works</h3>
+            <div class="explanation-content">
+                <div class="explanation-item">
+                    <div class="explanation-icon">1</div>
+                    <div class="explanation-text">
+                        <h4>Data Collection</h4>
+                        <p>Jack Cheng's SRE Copilot collects textual logs, numerical metrics, and visual dashboard images from multiple sources.</p>
+                    </div>
+                </div>
+                <div class="explanation-item">
+                    <div class="explanation-icon">2</div>
+                    <div class="explanation-text">
+                        <h4>Modal-Specific Processing</h4>
+                        <p>Each data type is processed by specialized AWS Bedrock foundation models optimized for that modality.</p>
+                    </div>
+                </div>
+                <div class="explanation-item">
+                    <div class="explanation-icon">3</div>
+                    <div class="explanation-text">
+                        <h4>Cross-Modal Correlation</h4>
+                        <p>The system identifies relationships between events across different data modalities, connecting log entries with metric spikes and dashboard anomalies.</p>
+                    </div>
+                </div>
+                <div class="explanation-item">
+                    <div class="explanation-icon">4</div>
+                    <div class="explanation-text">
+                        <h4>Visual Pattern Recognition</h4>
+                        <p>AWS Bedrock's vision capabilities identify patterns, anomalies, and trends in dashboard visualizations that might be missed by humans.</p>
+                    </div>
+                </div>
+                <div class="explanation-item">
+                    <div class="explanation-icon">5</div>
+                    <div class="explanation-text">
+                        <h4>Unified Analysis</h4>
+                        <p>All insights are combined into a comprehensive root cause analysis that leverages the strengths of each data modality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jack Cheng's SRE Copilot. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../../privacy.html">Privacy Policy</a>
+                <a href="../../terms.html">Terms of Service</a>
+                <a href="../../contact.html">Contact</a>
+            </div>
+            <div class="made-with">
+                <a href="https://manus.ai" target="_blank">Made with Manus</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/multi-modal-data.js"></script>
+    <script src="multi-modal.js"></script>
+</body>
+</html>
