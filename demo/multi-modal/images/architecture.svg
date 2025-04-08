@@ -1,0 +1,52 @@
+<!-- Simple placeholder for architecture.png -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#ffffff" />
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#212529">SRE Copilot Architecture</text>
+  
+  <!-- Main components -->
+  <rect x="300" y="100" width="200" height="80" rx="10" fill="#4a6cf7" />
+  <text x="400" y="145" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Supervisor Agent</text>
+  
+  <!-- Specialized agents -->
+  <rect x="100" y="250" width="160" height="60" rx="10" fill="#6c757d" />
+  <text x="180" y="285" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Log Analysis</text>
+  
+  <rect x="280" y="250" width="160" height="60" rx="10" fill="#6c757d" />
+  <text x="360" y="285" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Metrics Analysis</text>
+  
+  <rect x="460" y="250" width="160" height="60" rx="10" fill="#6c757d" />
+  <text x="540" y="285" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Dashboard Analysis</text>
+  
+  <rect x="640" y="250" width="160" height="60" rx="10" fill="#6c757d" />
+  <text x="720" y="285" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Knowledge Base</text>
+  
+  <!-- Data sources -->
+  <rect x="100" y="400" width="160" height="60" rx="10" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="2" />
+  <text x="180" y="435" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">Logs</text>
+  
+  <rect x="280" y="400" width="160" height="60" rx="10" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="2" />
+  <text x="360" y="435" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">Metrics</text>
+  
+  <rect x="460" y="400" width="160" height="60" rx="10" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="2" />
+  <text x="540" y="435" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">Dashboards</text>
+  
+  <rect x="640" y="400" width="160" height="60" rx="10" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="2" />
+  <text x="720" y="435" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">Historical Data</text>
+  
+  <!-- Connections -->
+  <line x1="400" y1="180" x2="180" y2="250" stroke="#212529" stroke-width="2" />
+  <line x1="400" y1="180" x2="360" y2="250" stroke="#212529" stroke-width="2" />
+  <line x1="400" y1="180" x2="540" y2="250" stroke="#212529" stroke-width="2" />
+  <line x1="400" y1="180" x2="720" y2="250" stroke="#212529" stroke-width="2" />
+  
+  <line x1="180" y1="310" x2="180" y2="400" stroke="#212529" stroke-width="2" />
+  <line x1="360" y1="310" x2="360" y2="400" stroke="#212529" stroke-width="2" />
+  <line x1="540" y1="310" x2="540" y2="400" stroke="#212529" stroke-width="2" />
+  <line x1="720" y1="310" x2="720" y2="400" stroke="#212529" stroke-width="2" />
+  
+  <!-- AWS Bedrock label -->
+  <rect x="50" y="50" width="180" height="40" rx="5" fill="#ff9900" />
+  <text x="140" y="75" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">AWS Bedrock</text>
+</svg>

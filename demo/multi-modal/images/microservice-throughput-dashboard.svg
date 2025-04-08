@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Title -->
+    <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold">Microservice Throughput Analysis</text>
+    
+    <!-- Request Rate Chart -->
+    <g transform="translate(50, 80)">
+        <text x="0" y="-10" font-size="14">Requests per Second</text>
+        <path d="M0,0 L0,200 L300,200" stroke="black" fill="none"/>
+        <path d="M0,150 C50,100 100,120 150,80 S250,60 300,40" stroke="#4CAF50" fill="none" stroke-width="2"/>
+        <text x="150" y="220" text-anchor="middle" font-size="12">Time</text>
+    </g>
+    
+    <!-- Endpoint Distribution -->
+    <g transform="translate(450, 80)">
+        <text x="0" y="-10" font-size="14">Request Distribution by Endpoint</text>
+        <rect x="0" y="0" width="60" height="150" fill="#4CAF50" fill-opacity="0.7"/>
+        <rect x="70" y="50" width="60" height="100" fill="#2196F3" fill-opacity="0.7"/>
+        <rect x="140" y="100" width="60" height="50" fill="#FFC107" fill-opacity="0.7"/>
+        <text x="30" y="170" text-anchor="middle" font-size="12">GET</text>
+        <text x="100" y="170" text-anchor="middle" font-size="12">POST</text>
+        <text x="170" y="170" text-anchor="middle" font-size="12">PUT</text>
+    </g>
+    
+    <!-- Throughput Metrics -->
+    <g transform="translate(50, 320)">
+        <text x="0" y="-10" font-size="14">Throughput Metrics</text>
+        <text x="0" y="10" font-size="12">Avg RPS: 1250</text>
+        <text x="0" y="30" font-size="12">Peak RPS: 2100</text>
+        <text x="0" y="50" font-size="12">Total Requests: 4.5M</text>
+    </g>
+    
+    <!-- Hot Endpoints -->
+    <g transform="translate(450, 320)">
+        <text x="0" y="-10" font-size="14">Hot Endpoints</text>
+        <text x="0" y="10" font-size="12">1. /api/v1/search (450 rps)</text>
+        <text x="0" y="30" font-size="12">2. /api/v1/users (380 rps)</text>
+        <text x="0" y="50" font-size="12">3. /api/v2/products (250 rps)</text>
+    </g>
+</svg> 

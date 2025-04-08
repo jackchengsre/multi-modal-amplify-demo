@@ -1,0 +1,32 @@
+<!-- Simple placeholder for hero-image.png -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f5f7ff" />
+  <rect x="50" y="50" width="700" height="400" rx="10" fill="#ffffff" stroke="#4a6cf7" stroke-width="2" />
+  
+  <!-- Dashboard elements -->
+  <rect x="80" y="100" width="300" height="150" rx="5" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="1" />
+  <rect x="100" y="120" width="260" height="20" rx="3" fill="#4a6cf7" opacity="0.7" />
+  <rect x="100" y="150" width="200" height="20" rx="3" fill="#4a6cf7" opacity="0.5" />
+  <rect x="100" y="180" width="240" height="20" rx="3" fill="#4a6cf7" opacity="0.6" />
+  <rect x="100" y="210" width="180" height="20" rx="3" fill="#4a6cf7" opacity="0.4" />
+  
+  <rect x="420" y="100" width="300" height="150" rx="5" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="1" />
+  <!-- Chart -->
+  <path d="M440,230 Q490,150 540,200 T640,180" stroke="#4a6cf7" stroke-width="3" fill="none" />
+  <circle cx="440" cy="230" r="4" fill="#4a6cf7" />
+  <circle cx="490" cy="150" r="4" fill="#4a6cf7" />
+  <circle cx="540" cy="200" r="4" fill="#4a6cf7" />
+  <circle cx="590" cy="170" r="4" fill="#4a6cf7" />
+  <circle cx="640" cy="180" r="4" fill="#4a6cf7" />
+  
+  <rect x="80" y="280" width="640" height="150" rx="5" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="1" />
+  <!-- Log entries -->
+  <rect x="100" y="300" width="600" height="15" rx="2" fill="#ffffff" />
+  <rect x="100" y="325" width="600" height="15" rx="2" fill="#ffffff" />
+  <rect x="100" y="350" width="600" height="15" rx="2" fill="#ffffff" />
+  <rect x="100" y="375" width="600" height="15" rx="2" fill="#ffffff" />
+  <rect x="100" y="400" width="600" height="15" rx="2" fill="#ffffff" />
+  
+  <!-- Title -->
+  <text x="400" y="70" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#212529">SRE Copilot Dashboard</text>
+</svg>

@@ -72,17 +72,17 @@ const scenarioData = {
         },
         dashboards: [
             {
-                imageUrl: "https://raw.githubusercontent.com/jackchengsre/demo-resources/main/jms-network-dashboard.png",
+                imageUrl: "images/jms-network-dashboard.png",
                 title: "JMS Network Dashboard",
                 description: "Network connectivity dashboard showing packet loss and latency"
             },
             {
-                imageUrl: "https://raw.githubusercontent.com/jackchengsre/demo-resources/main/jms-broker-dashboard.png",
+                imageUrl: "images/jms-broker-dashboard.png",
                 title: "JMS Broker Dashboard",
                 description: "JMS broker performance with connection counts and throughput"
             },
             {
-                imageUrl: "https://raw.githubusercontent.com/jackchengsre/demo-resources/main/jms-application-dashboard.png",
+                imageUrl: "images/jms-application-dashboard.png",
                 title: "JMS Application Dashboard",
                 description: "Application performance with error rates and status"
             }

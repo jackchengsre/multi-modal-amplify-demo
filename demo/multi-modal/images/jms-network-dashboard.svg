@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#f8f9fa"/>
+    
+    <!-- Title -->
+    <text x="20" y="30" font-family="Arial" font-size="20" font-weight="bold">Network Performance Dashboard</text>
+    
+    <!-- Packet Loss Graph -->
+    <g transform="translate(20, 60)">
+        <text x="0" y="0" font-family="Arial" font-size="14">Packet Loss Rate (%)</text>
+        <rect x="0" y="10" width="360" height="140" fill="#fff" stroke="#dee2e6"/>
+        <polyline points="30,130 90,100 150,120 210,90 270,110 330,70" 
+                 fill="none" stroke="#dc3545" stroke-width="2"/>
+        <!-- Y-axis labels -->
+        <text x="5" y="130" font-family="Arial" font-size="12">0</text>
+        <text x="5" y="70" font-family="Arial" font-size="12">5</text>
+        <text x="0" y="20" font-family="Arial" font-size="12">10</text>
+    </g>
+    
+    <!-- Latency Graph -->
+    <g transform="translate(420, 60)">
+        <text x="0" y="0" font-family="Arial" font-size="14">Network Latency (ms)</text>
+        <rect x="0" y="10" width="360" height="140" fill="#fff" stroke="#dee2e6"/>
+        <polyline points="30,100 90,110 150,80 210,120 270,90 330,95" 
+                 fill="none" stroke="#0d6efd" stroke-width="2"/>
+        <!-- Y-axis labels -->
+        <text x="5" y="130" font-family="Arial" font-size="12">0</text>
+        <text x="5" y="70" font-family="Arial" font-size="12">50</text>
+        <text x="0" y="20" font-family="Arial" font-size="12">100</text>
+    </g>
+    
+    <!-- Network Status -->
+    <g transform="translate(20, 240)">
+        <text x="0" y="0" font-family="Arial" font-size="14">Network Status</text>
+        <rect x="0" y="10" width="760" height="100" fill="#fff" stroke="#dee2e6"/>
+        <!-- Status Indicators -->
+        <circle cx="40" cy="40" r="10" fill="#198754"/>
+        <text x="60" y="45" font-family="Arial" font-size="12">Primary Link</text>
+        <circle cx="160" cy="40" r="10" fill="#ffc107"/>
+        <text x="180" y="45" font-family="Arial" font-size="12">Backup Link</text>
+        <circle cx="280" cy="40" r="10" fill="#198754"/>
+        <text x="300" y="45" font-family="Arial" font-size="12">DNS Services</text>
+    </g>
+</svg>

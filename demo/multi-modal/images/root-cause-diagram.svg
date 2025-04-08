@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#0066cc">Root Cause Analysis Process</text>
+  
+  <!-- Process Flow -->
+  <rect x="50" y="80" width="700" height="480" fill="#ffffff" stroke="#232f3e" stroke-width="2" rx="10" ry="10"/>
+  
+  <!-- Step 1: Data Collection -->
+  <rect x="100" y="120" width="600" height="70" fill="#e6f7ff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="400" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">1. Data Collection</text>
+  <text x="400" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Gather logs, metrics, and events from AWS CloudTrail, VPC Flow Logs, Health Dashboard, and Trusted Advisor</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="400" y1="190" x2="400" y2="210" stroke="#0066cc" stroke-width="2"/>
+  <polygon points="400,210 395,200 405,200" fill="#0066cc"/>
+  
+  <!-- Step 2: Specialized Analysis -->
+  <rect x="100" y="210" width="600" height="70" fill="#f0f0ff" stroke="#5a2ca0" stroke-width="1" rx="5" ry="5"/>
+  <text x="400" y="235" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#5a2ca0">2. Specialized Analysis</text>
+  <text x="400" y="260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Each agent analyzes its specific data domain using AWS Bedrock foundation models</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="400" y1="280" x2="400" y2="300" stroke="#5a2ca0" stroke-width="2"/>
+  <polygon points="400,300 395,290 405,290" fill="#5a2ca0"/>
+  
+  <!-- Step 3: Event Correlation -->
+  <rect x="100" y="300" width="600" height="70" fill="#fff4e6" stroke="#ff9900" stroke-width="1" rx="5" ry="5"/>
+  <text x="400" y="325" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#ff9900">3. Event Correlation</text>
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Identify relationships between events across services and construct causal chains</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="400" y1="370" x2="400" y2="390" stroke="#ff9900" stroke-width="2"/>
+  <polygon points="400,390 395,380 405,380" fill="#ff9900"/>
+  
+  <!-- Step 4: Root Cause Identification -->
+  <rect x="100" y="390" width="600" height="70" fill="#f0fff0" stroke="#28a745" stroke-width="1" rx="5" ry="5"/>
+  <text x="400" y="415" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#28a745">4. Root Cause Identification</text>
+  <text x="400" y="440" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Determine the primary cause and contributing factors of the incident</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="400" y1="460" x2="400" y2="480" stroke="#28a745" stroke-width="2"/>
+  <polygon points="400,480 395,470 405,470" fill="#28a745"/>
+  
+  <!-- Step 5: Recommendation Generation -->
+  <rect x="100" y="480" width="600" height="70" fill="#fff0f0" stroke="#dc3545" stroke-width="1" rx="5" ry="5"/>
+  <text x="400" y="505" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#dc3545">5. Recommendation Generation</text>
+  <text x="400" y="530" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Provide actionable recommendations for prevention and mitigation</text>
+  
+  <!-- AWS Bedrock Integration -->
+  <rect x="50" y="560" width="700" height="30" fill="#fff8e6" stroke="#ff9900" stroke-width="1" rx="5" ry="5"/>
+  <text x="400" y="580" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#ff9900">Powered by AWS Bedrock Foundation Models</text>
+  
+  <!-- Data Sources -->
+  <rect x="80" y="170" width="120" height="25" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="3" ry="3"/>
+  <text x="140" y="187" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0066cc">CloudTrail Logs</text>
+  
+  <rect x="210" y="170" width="120" height="25" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="3" ry="3"/>
+  <text x="270" y="187" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0066cc">VPC Flow Logs</text>
+  
+  <rect x="340" y="170" width="120" height="25" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="3" ry="3"/>
+  <text x="400" y="187" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0066cc">Health Dashboard</text>
+  
+  <rect x="470" y="170" width="120" height="25" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="3" ry="3"/>
+  <text x="530" y="187" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0066cc">Trusted Advisor</text>
+  
+  <!-- Specialized Agents -->
+  <rect x="80" y="260" width="120" height="25" fill="#ffffff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="140" y="277" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#5a2ca0">CloudTrail Agent</text>
+  
+  <rect x="210" y="260" width="120" height="25" fill="#ffffff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="270" y="277" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#5a2ca0">VPC Flow Logs Agent</text>
+  
+  <rect x="340" y="260" width="120" height="25" fill="#ffffff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="400" y="277" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#5a2ca0">Health Dashboard Agent</text>
+  
+  <rect x="470" y="260" width="120" height="25" fill="#ffffff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="530" y="277" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#5a2ca0">Trusted Advisor Agent</text>
+  
+  <!-- Correlation Elements -->
+  <rect x="150" y="350" width="120" height="25" fill="#ffffff" stroke="#ff9900" stroke-width="1" rx="3" ry="3"/>
+  <text x="210" y="367" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#ff9900">Temporal Analysis</text>
+  
+  <rect x="280" y="350" width="120" height="25" fill="#ffffff" stroke="#ff9900" stroke-width="1" rx="3" ry="3"/>
+  <text x="340" y="367" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#ff9900">Pattern Recognition</text>
+  
+  <rect x="410" y="350" width="120" height="25" fill="#ffffff" stroke="#ff9900" stroke-width="1" rx="3" ry="3"/>
+  <text x="470" y="367" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#ff9900">Causal Chain Analysis</text>
+  
+  <!-- Root Cause Elements -->
+  <rect x="150" y="440" width="120" height="25" fill="#ffffff" stroke="#28a745" stroke-width="1" rx="3" ry="3"/>
+  <text x="210" y="457" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#28a745">Primary Cause</text>
+  
+  <rect x="280" y="440" width="120" height="25" fill="#ffffff" stroke="#28a745" stroke-width="1" rx="3" ry="3"/>
+  <text x="340" y="457" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#28a745">Contributing Factors</text>
+  
+  <rect x="410" y="440" width="120" height="25" fill="#ffffff" stroke="#28a745" stroke-width="1" rx="3" ry="3"/>
+  <text x="470" y="457" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#28a745">Impact Assessment</text>
+  
+  <!-- Recommendation Elements -->
+  <rect x="150" y="530" width="120" height="25" fill="#ffffff" stroke="#dc3545" stroke-width="1" rx="3" ry="3"/>
+  <text x="210" y="547" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#dc3545">Prevention</text>
+  
+  <rect x="280" y="530" width="120" height="25" fill="#ffffff" stroke="#dc3545" stroke-width="1" rx="3" ry="3"/>
+  <text x="340" y="547" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#dc3545">Mitigation</text>
+  
+  <rect x="410" y="530" width="120" height="25" fill="#ffffff" stroke="#dc3545" stroke-width="1" rx="3" ry="3"/>
+  <text x="470" y="547" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#dc3545">Process Improvement</text>
+</svg>

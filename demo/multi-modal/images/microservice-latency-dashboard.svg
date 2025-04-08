@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Title -->
+    <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold">Microservice Latency Analysis</text>
+    
+    <!-- Service Latency Chart -->
+    <g transform="translate(50, 80)">
+        <text x="0" y="-10" font-size="14">Service Response Time (ms)</text>
+        <path d="M0,0 L0,200 L300,200" stroke="black" fill="none"/>
+        <path d="M0,100 C50,120 100,90 150,150 S250,130 300,160" stroke="#2196F3" fill="none" stroke-width="2"/>
+        <text x="150" y="220" text-anchor="middle" font-size="12">Time</text>
+    </g>
+    
+    <!-- Endpoint Latencies -->
+    <g transform="translate(450, 80)">
+        <text x="0" y="-10" font-size="14">Endpoint Latencies</text>
+        <rect x="0" y="0" width="60" height="120" fill="#2196F3" fill-opacity="0.7"/>
+        <rect x="70" y="40" width="60" height="80" fill="#4CAF50" fill-opacity="0.7"/>
+        <rect x="140" y="80" width="60" height="40" fill="#FFC107" fill-opacity="0.7"/>
+        <text x="30" y="140" text-anchor="middle" font-size="12">/api/v1</text>
+        <text x="100" y="140" text-anchor="middle" font-size="12">/api/v2</text>
+        <text x="170" y="140" text-anchor="middle" font-size="12">/health</text>
+    </g>
+    
+    <!-- Latency Distribution -->
+    <g transform="translate(50, 320)">
+        <text x="0" y="-10" font-size="14">Latency Distribution</text>
+        <text x="0" y="10" font-size="12">p50: 120ms</text>
+        <text x="0" y="30" font-size="12">p90: 250ms</text>
+        <text x="0" y="50" font-size="12">p99: 450ms</text>
+    </g>
+    
+    <!-- Slow Endpoints -->
+    <g transform="translate(450, 320)">
+        <text x="0" y="-10" font-size="14" fill="#F44336">Slow Endpoints</text>
+        <text x="0" y="10" font-size="12">1. /api/v1/users (350ms avg)</text>
+        <text x="0" y="30" font-size="12">2. /api/v2/orders (280ms avg)</text>
+        <text x="0" y="50" font-size="12">3. /api/v1/products (220ms avg)</text>
+    </g>
+</svg> 

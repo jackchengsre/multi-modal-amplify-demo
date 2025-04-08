@@ -1,0 +1,81 @@
+<!-- Simple placeholder for agent-communication.png -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#ffffff" />
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#212529">Agent Communication Flow</text>
+  
+  <!-- Agents -->
+  <circle cx="400" cy="150" r="60" fill="#4a6cf7" />
+  <text x="400" y="155" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Supervisor</text>
+  <text x="400" y="175" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Agent</text>
+  
+  <circle cx="200" cy="300" r="50" fill="#6c757d" />
+  <text x="200" y="295" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Log</text>
+  <text x="200" y="315" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Agent</text>
+  
+  <circle cx="400" cy="300" r="50" fill="#6c757d" />
+  <text x="400" y="295" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Metrics</text>
+  <text x="400" y="315" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Agent</text>
+  
+  <circle cx="600" cy="300" r="50" fill="#6c757d" />
+  <text x="600" y="295" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Dashboard</text>
+  <text x="600" y="315" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Agent</text>
+  
+  <circle cx="400" cy="450" r="50" fill="#6c757d" />
+  <text x="400" y="445" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Knowledge</text>
+  <text x="400" y="465" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Agent</text>
+  
+  <!-- Communication lines -->
+  <!-- Supervisor to specialized agents -->
+  <line x1="370" y1="200" x2="230" y2="270" stroke="#4a6cf7" stroke-width="3" />
+  <polygon points="230,270 245,255 240,275" fill="#4a6cf7" />
+  
+  <line x1="400" y1="210" x2="400" y2="250" stroke="#4a6cf7" stroke-width="3" />
+  <polygon points="400,250 390,235 410,235" fill="#4a6cf7" />
+  
+  <line x1="430" y1="200" x2="570" y2="270" stroke="#4a6cf7" stroke-width="3" />
+  <polygon points="570,270 555,255 560,275" fill="#4a6cf7" />
+  
+  <line x1="400" y1="210" x2="400" y2="400" stroke="#4a6cf7" stroke-width="3" stroke-dasharray="5,5" />
+  <polygon points="400,400 390,385 410,385" fill="#4a6cf7" />
+  
+  <!-- Specialized agents to Supervisor -->
+  <line x1="240" y1="270" x2="370" y2="190" stroke="#6c757d" stroke-width="2" />
+  <polygon points="370,190 355,205 350,185" fill="#6c757d" />
+  
+  <line x1="400" y1="250" x2="400" y2="210" stroke="#6c757d" stroke-width="2" />
+  <polygon points="400,210 390,225 410,225" fill="#6c757d" />
+  
+  <line x1="560" y1="270" x2="430" y2="190" stroke="#6c757d" stroke-width="2" />
+  <polygon points="430,190 445,205 440,185" fill="#6c757d" />
+  
+  <line x1="400" y1="400" x2="400" y2="210" stroke="#6c757d" stroke-width="2" stroke-dasharray="5,5" />
+  <polygon points="400,210 390,225 410,225" fill="#6c757d" />
+  
+  <!-- Peer-to-peer communication -->
+  <path d="M250,300 C300,270 300,330 350,300" stroke="#6c757d" stroke-width="2" stroke-dasharray="3,3" fill="none" />
+  <polygon points="350,300 335,290 335,310" fill="#6c757d" />
+  
+  <path d="M450,300 C500,270 500,330 550,300" stroke="#6c757d" stroke-width="2" stroke-dasharray="3,3" fill="none" />
+  <polygon points="550,300 535,290 535,310" fill="#6c757d" />
+  
+  <path d="M200,350 C200,400 350,400 400,400" stroke="#6c757d" stroke-width="2" stroke-dasharray="3,3" fill="none" />
+  <polygon points="400,400 385,390 385,410" fill="#6c757d" />
+  
+  <path d="M600,350 C600,400 450,400 400,400" stroke="#6c757d" stroke-width="2" stroke-dasharray="3,3" fill="none" />
+  <polygon points="400,400 415,390 415,410" fill="#6c757d" />
+  
+  <!-- Legend -->
+  <rect x="600" y="80" width="150" height="120" rx="5" fill="#f8f9fa" stroke="#212529" stroke-width="1" />
+  <text x="675" y="100" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#212529">Legend</text>
+  
+  <line x1="620" y1="120" x2="650" y2="120" stroke="#4a6cf7" stroke-width="3" />
+  <text x="700" y="125" font-family="Arial" font-size="12" fill="#212529">Task Delegation</text>
+  
+  <line x1="620" y1="150" x2="650" y2="150" stroke="#6c757d" stroke-width="2" />
+  <text x="700" y="155" font-family="Arial" font-size="12" fill="#212529">Results Report</text>
+  
+  <line x1="620" y1="180" x2="650" y2="180" stroke="#6c757d" stroke-width="2" stroke-dasharray="3,3" />
+  <text x="700" y="185" font-family="Arial" font-size="12" fill="#212529">Peer Exchange</text>
+</svg>

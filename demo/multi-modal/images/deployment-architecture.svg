@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#ffffff" />
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#212529">Deployment Architecture</text>
+  
+  <!-- AWS Cloud -->
+  <rect x="50" y="80" width="700" height="380" rx="15" fill="#f8f9fa" stroke="#232f3e" stroke-width="2" />
+  <text x="120" y="110" font-family="Arial" font-size="18" font-weight="bold" fill="#232f3e">AWS Cloud</text>
+  
+  <!-- Deployment Options -->
+  <rect x="100" y="130" width="600" height="300" rx="10" fill="#e3e9ff" stroke="#4a6cf7" stroke-width="2" />
+  <text x="400" y="155" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#212529">Deployment Options</text>
+  
+  <!-- Standalone Deployment -->
+  <rect x="120" y="180" width="250" height="100" rx="5" fill="#4a6cf7" opacity="0.2" stroke="#4a6cf7" stroke-width="2" />
+  <text x="245" y="205" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">Standalone Deployment</text>
+  <text x="245" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Single-instance deployment</text>
+  <text x="245" y="250" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Simplified setup</text>
+  <text x="245" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">EC2 or local server</text>
+  
+  <!-- Containerized Deployment -->
+  <rect x="430" y="180" width="250" height="100" rx="5" fill="#4a6cf7" opacity="0.2" stroke="#4a6cf7" stroke-width="2" />
+  <text x="555" y="205" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">Containerized Deployment</text>
+  <text x="555" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Docker containers</text>
+  <text x="555" y="250" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">ECS or Kubernetes</text>
+  <text x="555" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Scalable and resilient</text>
+  
+  <!-- Serverless Deployment -->
+  <rect x="120" y="310" width="250" height="100" rx="5" fill="#4a6cf7" opacity="0.2" stroke="#4a6cf7" stroke-width="2" />
+  <text x="245" y="335" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">Serverless Deployment</text>
+  <text x="245" y="360" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Lambda functions</text>
+  <text x="245" y="380" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">API Gateway</text>
+  <text x="245" y="400" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Minimal infrastructure</text>
+  
+  <!-- High-Availability Deployment -->
+  <rect x="430" y="310" width="250" height="100" rx="5" fill="#4a6cf7" opacity="0.2" stroke="#4a6cf7" stroke-width="2" />
+  <text x="555" y="335" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">High-Availability Deployment</text>
+  <text x="555" y="360" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Multi-region deployment</text>
+  <text x="555" y="380" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Failover mechanisms</text>
+  <text x="555" y="400" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Disaster recovery</text>
+  
+  <!-- AWS Services -->
+  <rect x="50" y="440" width="700" height="40" rx="5" fill="#ff9900" opacity="0.2" stroke="#ff9900" stroke-width="2" />
+  <text x="400" y="465" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#232f3e">AWS Services: EC2, ECS, Lambda, API Gateway, S3, CloudFront, Route 53, IAM</text>
+</svg>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#0066cc">AWS Monitoring Integration Architecture</text>
+  
+  <!-- AWS Cloud -->
+  <rect x="50" y="80" width="700" height="480" fill="#ffffff" stroke="#232f3e" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#232f3e">AWS Cloud</text>
+  
+  <!-- AWS Services Section -->
+  <rect x="80" y="130" width="320" height="400" fill="#f1faff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="240" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">AWS Monitoring Services</text>
+  
+  <!-- CloudTrail -->
+  <rect x="100" y="170" width="280" height="80" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="240" y="200" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0066cc">AWS CloudTrail</text>
+  <text x="240" y="225" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">API Activity Monitoring</text>
+  
+  <!-- VPC Flow Logs -->
+  <rect x="100" y="260" width="280" height="80" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="240" y="290" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0066cc">VPC Flow Logs</text>
+  <text x="240" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Network Traffic Analysis</text>
+  
+  <!-- AWS Health Dashboard -->
+  <rect x="100" y="350" width="280" height="80" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="240" y="380" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0066cc">AWS Health Dashboard</text>
+  <text x="240" y="405" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Service Health Monitoring</text>
+  
+  <!-- AWS Trusted Advisor -->
+  <rect x="100" y="440" width="280" height="80" fill="#ffffff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="240" y="470" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0066cc">AWS Trusted Advisor</text>
+  <text x="240" y="495" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Best Practice Recommendations</text>
+  
+  <!-- SRE Copilot Section -->
+  <rect x="450" y="130" width="280" height="400" fill="#f5f5ff" stroke="#5a2ca0" stroke-width="1" rx="5" ry="5"/>
+  <text x="590" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#5a2ca0">SRE Copilot with AWS Bedrock</text>
+  
+  <!-- Specialized Agents -->
+  <rect x="470" y="170" width="240" height="200" fill="#ffffff" stroke="#5a2ca0" stroke-width="1" rx="5" ry="5"/>
+  <text x="590" y="190" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#5a2ca0">Specialized Monitoring Agents</text>
+  
+  <!-- Individual Agents -->
+  <rect x="480" y="200" width="220" height="35" fill="#f8f0ff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="590" y="223" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">CloudTrail Agent</text>
+  
+  <rect x="480" y="245" width="220" height="35" fill="#f8f0ff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="590" y="268" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">VPC Flow Logs Agent</text>
+  
+  <rect x="480" y="290" width="220" height="35" fill="#f8f0ff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="590" y="313" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Health Dashboard Agent</text>
+  
+  <rect x="480" y="335" width="220" height="35" fill="#f8f0ff" stroke="#5a2ca0" stroke-width="1" rx="3" ry="3"/>
+  <text x="590" y="358" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Trusted Advisor Agent</text>
+  
+  <!-- Event Correlation System -->
+  <rect x="470" y="380" width="240" height="70" fill="#ffffff" stroke="#5a2ca0" stroke-width="1" rx="5" ry="5"/>
+  <text x="590" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#5a2ca0">Event Correlation System</text>
+  <text x="590" y="430" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Cross-Service Analysis</text>
+  
+  <!-- Root Cause Analysis -->
+  <rect x="470" y="460" width="240" height="70" fill="#ffffff" stroke="#5a2ca0" stroke-width="1" rx="5" ry="5"/>
+  <text x="590" y="490" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#5a2ca0">Root Cause Analysis</text>
+  <text x="590" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Incident Report Generation</text>
+  
+  <!-- Connection Lines -->
+  <!-- CloudTrail to CloudTrail Agent -->
+  <line x1="380" y1="210" x2="480" y2="217" stroke="#0066cc" stroke-width="2"/>
+  <polygon points="475,217 485,217 480,222" fill="#0066cc"/>
+  
+  <!-- VPC Flow Logs to VPC Flow Logs Agent -->
+  <line x1="380" y1="300" x2="480" y2="262" stroke="#0066cc" stroke-width="2"/>
+  <polygon points="475,262 485,262 480,267" fill="#0066cc"/>
+  
+  <!-- Health Dashboard to Health Dashboard Agent -->
+  <line x1="380" y1="390" x2="480" y2="307" stroke="#0066cc" stroke-width="2"/>
+  <polygon points="475,307 485,307 480,312" fill="#0066cc"/>
+  
+  <!-- Trusted Advisor to Trusted Advisor Agent -->
+  <line x1="380" y1="480" x2="480" y2="352" stroke="#0066cc" stroke-width="2"/>
+  <polygon points="475,352 485,352 480,357" fill="#0066cc"/>
+  
+  <!-- Agents to Event Correlation -->
+  <line x1="590" y1="370" x2="590" y2="380" stroke="#5a2ca0" stroke-width="2"/>
+  <polygon points="590,375 585,385 595,385" fill="#5a2ca0"/>
+  
+  <!-- Event Correlation to Root Cause Analysis -->
+  <line x1="590" y1="450" x2="590" y2="460" stroke="#5a2ca0" stroke-width="2"/>
+  <polygon points="590,455 585,465 595,465" fill="#5a2ca0"/>
+  
+  <!-- AWS Bedrock -->
+  <rect x="300" y="540" width="200" height="40" fill="#ffffff" stroke="#ff9900" stroke-width="2" rx="5" ry="5"/>
+  <text x="400" y="565" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#ff9900">AWS Bedrock Foundation Models</text>
+  
+  <!-- Bedrock Connection -->
+  <path d="M 400 540 C 400 520 590 520 590 460" stroke="#ff9900" stroke-width="2" fill="none"/>
+  <polygon points="590,465 585,455 595,455" fill="#ff9900"/>
+</svg>

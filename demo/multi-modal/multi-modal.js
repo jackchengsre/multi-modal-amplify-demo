@@ -5,6 +5,70 @@
  * focusing on proper visual feedback during analysis
  */
 
+// Dummy metrics data
+const scenarioData = {
+    'jms': {
+        metrics: {
+            'CPU Usage (%)': [
+                { timestamp: '2024-04-08T11:00:00', value: 45 },
+                { timestamp: '2024-04-08T11:05:00', value: 65 },
+                { timestamp: '2024-04-08T11:10:00', value: 85 }
+            ],
+            'Memory Usage (GB)': [
+                { timestamp: '2024-04-08T11:00:00', value: 4.2 },
+                { timestamp: '2024-04-08T11:05:00', value: 4.8 },
+                { timestamp: '2024-04-08T11:10:00', value: 5.5 }
+            ],
+            'Network Latency (ms)': [
+                { timestamp: '2024-04-08T11:00:00', value: 50 },
+                { timestamp: '2024-04-08T11:05:00', value: 150 },
+                { timestamp: '2024-04-08T11:10:00', value: 250 }
+            ],
+            'Error Rate (%)': [
+                { timestamp: '2024-04-08T11:00:00', value: 0.5 },
+                { timestamp: '2024-04-08T11:05:00', value: 2.5 },
+                { timestamp: '2024-04-08T11:10:00', value: 5.0 }
+            ]
+        },
+        logs: [
+            '2024-04-08 11:00:00 INFO  Connection established to message broker',
+            '2024-04-08 11:05:00 WARN  Increased latency detected in message processing',
+            '2024-04-08 11:10:00 ERROR Connection timeout to message broker'
+        ],
+        dashboards: ['jms-network-dashboard.png', 'jms-broker-dashboard.png', 'jms-application-dashboard.png']
+    },
+    'jvm': {
+        metrics: {
+            'Heap Usage (GB)': [
+                { timestamp: '2024-04-08T11:00:00', value: 2.1 },
+                { timestamp: '2024-04-08T11:05:00', value: 3.8 },
+                { timestamp: '2024-04-08T11:10:00', value: 6.2 }
+            ],
+            'GC Pause Time (ms)': [
+                { timestamp: '2024-04-08T11:00:00', value: 100 },
+                { timestamp: '2024-04-08T11:05:00', value: 250 },
+                { timestamp: '2024-04-08T11:10:00', value: 500 }
+            ],
+            'Thread Count': [
+                { timestamp: '2024-04-08T11:00:00', value: 50 },
+                { timestamp: '2024-04-08T11:05:00', value: 75 },
+                { timestamp: '2024-04-08T11:10:00', value: 120 }
+            ],
+            'CPU Usage (%)': [
+                { timestamp: '2024-04-08T11:00:00', value: 60 },
+                { timestamp: '2024-04-08T11:05:00', value: 80 },
+                { timestamp: '2024-04-08T11:10:00', value: 95 }
+            ]
+        },
+        logs: [
+            '2024-04-08 11:00:00 INFO  JVM started with 8GB heap',
+            '2024-04-08 11:05:00 WARN  High memory pressure detected',
+            '2024-04-08 11:10:00 ERROR OutOfMemoryError: Java heap space'
+        ],
+        dashboards: ['jvm-memory-dashboard.png', 'jvm-gc-dashboard.png', 'jvm-threads-dashboard.png']
+    }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize variables
     let currentScenario = 'jms';
@@ -30,28 +94,129 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('next-btn');
     const indicators = document.querySelectorAll('.indicator');
     const dashboardImages = document.querySelectorAll('.dashboard-image');
+    const metricsData = document.getElementById('metrics-data');
+    const metricsChart = document.querySelector('.metrics-chart');
 
     console.log('DOM elements initialized:', {
         startAnalysisBtn: startAnalysisBtn !== null,
         resetDemoBtn: resetDemoBtn !== null,
-        analysisPanel: analysisPanel !== null
+        analysisPanel: analysisPanel !== null,
+        metricsData: metricsData !== null,
+        metricsChart: metricsChart !== null
     });
 
-    // Initialize the demo
+    // Function to update metrics
+    function updateMetrics() {
+        const metricsData = document.getElementById('metrics-data');
+        const metricsChart = document.querySelector('.metrics-chart');
+
+        // Static metrics data display
+        if (metricsData) {
+            metricsData.innerHTML = `
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-name">CPU Usage (%)</div>
+                        <div class="metric-value" style="color: #dc3545">85 <span class="trend-arrow up">↑</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Memory Usage (GB)</div>
+                        <div class="metric-value" style="color: #dc3545">5.5 <span class="trend-arrow up">↑</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Network Latency (ms)</div>
+                        <div class="metric-value" style="color: #dc3545">250 <span class="trend-arrow up">↑</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Error Rate (%)</div>
+                        <div class="metric-value" style="color: #dc3545">5.0 <span class="trend-arrow up">↑</span></div>
+                    </div>
+                </div>`;
+        }
+
+        // Static chart display
+        if (metricsChart) {
+            metricsChart.innerHTML = `
+                <div class="charts-container">
+                    <div class="metric-chart">
+                        <h4>System Metrics Overview</h4>
+                        <svg width="600" height="300" viewBox="0 0 600 300">
+                            <!-- Background -->
+                            <rect width="600" height="300" fill="#f8f9fa" rx="4"/>
+                            
+                            <!-- Grid lines -->
+                            <g stroke="#e0e0e0" stroke-width="1">
+                                <line x1="50" y1="250" x2="550" y2="250"/>
+                                <line x1="50" y1="200" x2="550" y2="200"/>
+                                <line x1="50" y1="150" x2="550" y2="150"/>
+                                <line x1="50" y1="100" x2="550" y2="100"/>
+                                <line x1="50" y1="50" x2="550" y2="50"/>
+                            </g>
+
+                            <!-- CPU Usage Line (Red) -->
+                            <path d="M 50 200 L 200 150 L 350 100 L 500 50" 
+                                  stroke="#dc3545" 
+                                  stroke-width="3" 
+                                  fill="none"/>
+                            <circle cx="50" cy="200" r="4" fill="#dc3545"/>
+                            <circle cx="200" cy="150" r="4" fill="#dc3545"/>
+                            <circle cx="350" cy="100" r="4" fill="#dc3545"/>
+                            <circle cx="500" cy="50" r="4" fill="#dc3545"/>
+
+                            <!-- Memory Usage Line (Blue) -->
+                            <path d="M 50 220 L 200 180 L 350 120 L 500 80" 
+                                  stroke="#0d6efd" 
+                                  stroke-width="3" 
+                                  fill="none"/>
+                            <circle cx="50" cy="220" r="4" fill="#0d6efd"/>
+                            <circle cx="200" cy="180" r="4" fill="#0d6efd"/>
+                            <circle cx="350" cy="120" r="4" fill="#0d6efd"/>
+                            <circle cx="500" cy="80" r="4" fill="#0d6efd"/>
+
+                            <!-- Network Latency Line (Yellow) -->
+                            <path d="M 50 180 L 200 220 L 350 180 L 500 250" 
+                                  stroke="#ffc107" 
+                                  stroke-width="3" 
+                                  fill="none"/>
+                            <circle cx="50" cy="180" r="4" fill="#ffc107"/>
+                            <circle cx="200" cy="220" r="4" fill="#ffc107"/>
+                            <circle cx="350" cy="180" r="4" fill="#ffc107"/>
+                            <circle cx="500" cy="250" r="4" fill="#ffc107"/>
+
+                            <!-- Labels -->
+                            <text x="30" y="250" text-anchor="end" fill="#666">0</text>
+                            <text x="30" y="200" text-anchor="end" fill="#666">25</text>
+                            <text x="30" y="150" text-anchor="end" fill="#666">50</text>
+                            <text x="30" y="100" text-anchor="end" fill="#666">75</text>
+                            <text x="30" y="50" text-anchor="end" fill="#666">100</text>
+
+                            <!-- Legend -->
+                            <g transform="translate(50, 270)">
+                                <circle cx="10" cy="0" r="4" fill="#dc3545"/>
+                                <text x="20" y="5" fill="#666">CPU Usage</text>
+                                <circle cx="120" cy="0" r="4" fill="#0d6efd"/>
+                                <text x="130" y="5" fill="#666">Memory</text>
+                                <circle cx="210" cy="0" r="4" fill="#ffc107"/>
+                                <text x="220" y="5" fill="#666">Latency</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>`;
+        }
+    }
+
+    // Initialize the demo with metrics
+    updateMetrics();
     loadScenarioData(currentScenario);
 
     // Event listeners for scenario buttons
     scenarioBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            if (analysisStarted && !analysisCompleted) return; // Prevent changing scenario during analysis
-            
-            // Update active button
+            if (analysisStarted && !analysisCompleted) return;
             scenarioBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
-            // Load scenario data
             currentScenario = this.dataset.scenario;
             loadScenarioData(currentScenario);
+            updateMetrics();  // Update metrics when scenario changes
             resetAnalysis();
         });
     });
@@ -59,14 +224,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners for tab buttons
     tabBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Update active button
             tabBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
-            // Show corresponding tab content
             currentTab = this.dataset.tab;
             tabContents.forEach(content => content.classList.remove('active'));
             document.getElementById(`${currentTab}-content`).classList.add('active');
+            if (currentTab === 'metrics') {
+                updateMetrics();  // Refresh metrics when switching to metrics tab
+            }
         });
     });
 
@@ -286,19 +451,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to load scenario data
     function loadScenarioData(scenario) {
+        console.log('Loading scenario data:', scenario);
         const data = scenarioData[scenario];
         
-        // Load application logs
+        // Update logs
         const appLogs = document.getElementById('app-logs');
-        appLogs.innerHTML = formatLogs(data.logs);
+        if (appLogs) {
+            appLogs.innerHTML = `<pre>${data.logs.join('\n')}</pre>`;
+        }
         
-        // Load metrics data
-        const metricsData = document.getElementById('metrics-data');
-        metricsData.innerHTML = formatMetrics(data.metrics);
-        
-        // Create metrics chart
-        const metricsChart = document.querySelector('.metrics-chart');
-        metricsChart.innerHTML = createMetricsChart(data.metrics);
+        // Update metrics
+        updateMetrics();
         
         // Load dashboard images
         loadDashboardImages(data.dashboards);
@@ -306,6 +469,105 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset dashboard carousel
         currentDashboardIndex = 0;
         updateDashboardCarousel();
+    }
+
+    // Function to render metrics
+    function renderMetrics(metrics, dataContainer) {
+        console.log('Rendering metrics:', metrics);
+        let dataHtml = '<div class="metrics-grid">';
+        let chartHtml = '<div class="charts-container">';
+        
+        Object.entries(metrics).forEach(([metricName, values], index) => {
+            // Add metric data
+            const latestValue = values[values.length - 1].value;
+            const previousValue = values[values.length - 2]?.value || 0;
+            const trend = latestValue > previousValue ? 'up' : 'down';
+            const trendColor = getTrendColor(metricName, trend);
+            
+            dataHtml += `
+                <div class="metric-item">
+                    <div class="metric-name">${metricName}</div>
+                    <div class="metric-value" style="color: ${trendColor}">
+                        ${latestValue}
+                        <span class="trend-arrow ${trend}">${trend === 'up' ? '↑' : '↓'}</span>
+                    </div>
+                </div>
+            `;
+            
+            // Add metric chart
+            chartHtml += createMetricChart(metricName, values, index);
+        });
+        
+        dataHtml += '</div>';
+        chartHtml += '</div>';
+
+        // Update the metrics data container
+        dataContainer.innerHTML = dataHtml;
+        
+        // Update the chart container
+        const metricsChart = document.querySelector('.metrics-chart');
+        if (metricsChart) {
+            metricsChart.innerHTML = chartHtml;
+        }
+    }
+
+    // Function to create a metric chart
+    function createMetricChart(metricName, values, index) {
+        const width = 300;
+        const height = 150;
+        const padding = 20;
+        const chartWidth = width - (padding * 2);
+        const chartHeight = height - (padding * 2);
+        
+        // Calculate scales
+        const maxValue = Math.max(...values.map(v => v.value));
+        const minValue = Math.min(...values.map(v => v.value));
+        
+        // Create points for the line
+        const points = values.map((v, i) => {
+            const x = padding + (i * (chartWidth / (values.length - 1)));
+            const y = height - (padding + ((v.value - minValue) * chartHeight / (maxValue - minValue)));
+            return `${x},${y}`;
+        }).join(' ');
+        
+        return `
+            <div class="metric-chart">
+                <h4>${metricName}</h4>
+                <svg width="${width}" height="${height}" class="metric-svg">
+                    <rect width="${width}" height="${height}" fill="#f8f9fa" rx="4"/>
+                    <polyline 
+                        points="${points}"
+                        fill="none"
+                        stroke="${getMetricColor(metricName)}"
+                        stroke-width="2"
+                    />
+                    <!-- Add dots for data points -->
+                    ${values.map((v, i) => {
+                        const x = padding + (i * (chartWidth / (values.length - 1)));
+                        const y = height - (padding + ((v.value - minValue) * chartHeight / (maxValue - minValue)));
+                        return `<circle cx="${x}" cy="${y}" r="3" fill="${getMetricColor(metricName)}"/>`;
+                    }).join('')}
+                </svg>
+            </div>
+        `;
+    }
+
+    // Function to get trend color
+    function getTrendColor(metricName, trend) {
+        if (metricName.includes('Error') || metricName.includes('Loss')) {
+            return trend === 'up' ? '#dc3545' : '#198754';
+        }
+        return trend === 'up' ? '#198754' : '#dc3545';
+    }
+
+    // Function to get metric color
+    function getMetricColor(metricName) {
+        if (metricName.includes('Error') || metricName.includes('Loss')) {
+            return '#dc3545';
+        } else if (metricName.includes('Latency') || metricName.includes('Time')) {
+            return '#ffc107';
+        }
+        return '#0d6efd';
     }
 
     // Function to create correlation diagram
@@ -414,39 +676,77 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to load dashboard images
     function loadDashboardImages(dashboards) {
-        // Implementation depends on how dashboards are structured
-        // This is a placeholder for the actual implementation
-    }
-
-    // Function to format logs
-    function formatLogs(logs) {
-        // Implementation depends on log format
-        // This is a placeholder for the actual implementation
-        if (!logs || logs.length === 0) return '<pre>No logs found.</pre>';
-        
-        let html = '';
-        logs.forEach(log => {
-            html += `<div class="log-entry">${log}</div>`;
+        // Add error handling for dashboard images
+        const dashboardImgs = document.querySelectorAll('.dashboard-image img');
+        dashboardImgs.forEach(img => {
+            img.onerror = function() {
+                // Replace with placeholder content
+                const placeholder = document.createElement('div');
+                placeholder.className = 'dashboard-placeholder';
+                placeholder.innerHTML = `
+                    <div class="placeholder-content">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <rect width="100" height="100" fill="#f0f0f0"/>
+                            <text x="50" y="50" text-anchor="middle" fill="#666">
+                                Dashboard Preview
+                            </text>
+                        </svg>
+                        <p>Dashboard image not available</p>
+                    </div>
+                `;
+                this.parentNode.replaceChild(placeholder, this);
+            };
         });
-        
-        return html;
     }
 
-    // Function to format metrics
-    function formatMetrics(metrics) {
-        // Implementation depends on metrics format
-        // This is a placeholder for the actual implementation
-        if (!metrics) return '<pre>No metrics found.</pre>';
-        
-        return '<div class="metrics-table">Metrics data would be displayed here</div>';
-    }
-
-    // Function to create metrics chart
-    function createMetricsChart(metrics) {
-        // Implementation depends on metrics format
-        // This is a placeholder for the actual implementation
-        if (!metrics) return '<div class="chart-placeholder">No metrics data available</div>';
-        
-        return '<svg class="metrics-svg" width="100%" height="200"></svg>';
-    }
+    // Add CSS styles for metrics and charts
+    const style = document.createElement('style');
+    style.textContent = `
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .metric-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .metric-name {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .trend-arrow {
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .metric-chart {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .metric-chart h4 {
+            margin: 0 0 1rem 0;
+            color: #333;
+        }
+        .metric-svg {
+            width: 100%;
+            height: auto;
+        }
+    `;
+    document.head.appendChild(style);
 });

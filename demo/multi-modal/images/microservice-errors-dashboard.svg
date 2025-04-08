@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Title -->
+    <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold">Microservice Error Analysis</text>
+    
+    <!-- Error Rate Chart -->
+    <g transform="translate(50, 80)">
+        <text x="0" y="-10" font-size="14">Error Rate Over Time</text>
+        <path d="M0,0 L0,200 L300,200" stroke="black" fill="none"/>
+        <path d="M0,180 C50,170 100,190 150,120 S250,140 300,60" stroke="#F44336" fill="none" stroke-width="2"/>
+        <text x="150" y="220" text-anchor="middle" font-size="12">Time</text>
+    </g>
+    
+    <!-- Error Types -->
+    <g transform="translate(450, 80)">
+        <text x="0" y="-10" font-size="14">Error Types Distribution</text>
+        <rect x="0" y="0" width="60" height="120" fill="#F44336" fill-opacity="0.7"/>
+        <rect x="70" y="30" width="60" height="90" fill="#FFC107" fill-opacity="0.7"/>
+        <rect x="140" y="60" width="60" height="60" fill="#2196F3" fill-opacity="0.7"/>
+        <text x="30" y="140" text-anchor="middle" font-size="12">500</text>
+        <text x="100" y="140" text-anchor="middle" font-size="12">400</text>
+        <text x="170" y="140" text-anchor="middle" font-size="12">Timeout</text>
+    </g>
+    
+    <!-- Recent Errors -->
+    <g transform="translate(50, 320)">
+        <text x="0" y="-10" font-size="14">Recent Errors</text>
+        <text x="0" y="10" font-size="12">1. NullPointerException in UserService</text>
+        <text x="0" y="30" font-size="12">2. Timeout in PaymentService</text>
+        <text x="0" y="50" font-size="12">3. 404 Not Found /api/v2/orders</text>
+    </g>
+    
+    <!-- Error Summary -->
+    <g transform="translate(450, 320)">
+        <text x="0" y="-10" font-size="14">Error Summary</text>
+        <text x="0" y="10" font-size="12">Error Rate: 2.5%</text>
+        <text x="0" y="30" font-size="12">Most Common: 500 Internal Server Error</text>
+        <text x="0" y="50" font-size="12">Affected Services: 3</text>
+    </g>
+</svg> 
